@@ -84,8 +84,6 @@ float* FindX2(float** Matrix, int n, int m)
 	for (int i = 0; i < n; i++)
 	{
 
-
-
 		for (int l = i; l < n; l++)
 		{
 			if (Matrix[i][i] < Matrix[l][i])
@@ -160,7 +158,7 @@ float* ResidualVect(float* ans, float* Matrix, int m, int n)
 	cout << "Residual Vector: " << setprecision(10) << endl;
 	for (int i = 0; i < k; i++)
 	{
-		cout << newans[i] - Matrix[j] << " ";//arr[j] - newans[i] << " ";
+		cout << newans[i] - Matrix[j] << " ";//Matrix[j] - newans[i] << " ";
 		j += 4;
 	}
 	cout << endl;
