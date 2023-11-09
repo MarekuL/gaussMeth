@@ -1,6 +1,6 @@
 #include "Gauss.h"
 
-void del(float* ans, float* ansb, int n)
+void Error(float* ans, float* ansb, int n)
 {
 	float sum1 = 0;
 	float sum2 = 0;
@@ -11,8 +11,7 @@ void del(float* ans, float* ansb, int n)
 		sum2 = max(sum1, ans[i]);
 	}
 
-	cout << setprecision(10) << "DEL: " << sum1 / sum2;
-
+	cout << setprecision(10) << "Absolute error: " << sum1 / sum2;
 }
 
 float** Create(int n, int m, float* a)
@@ -153,15 +152,21 @@ float* ResidualVect(float* ans, float* Matrix, int m, int n)
 		newans[k] += ans[j] * Matrix[i];
 		j++;
 	}
-
+	float max = 0;
 	j = 3;
 	cout << "Residual Vector: " << setprecision(10) << endl;
 	for (int i = 0; i < k; i++)
 	{
-		cout << newans[i] - Matrix[j] << " ";//Matrix[j] - newans[i] << " ";
+		cout << newans[i] - Matrix[j] << " ";
+		if (abs(newans[i] - Matrix[j]) > max)
+		{
+			max = abs(newans[i] - Matrix[j]);
+		}
 		j += 4;
+
 	}
 	cout << endl;
+	cout << "Norm: " << max <<endl;
 
 	return newans;
 }

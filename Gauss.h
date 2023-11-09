@@ -11,4 +11,4 @@ float* FindX2(float** arr, int n, int m);
 void OutAns(float* ans, int n);
 float* ResidualVect(float* ans, float* arr, int m, int n);
 float** CreateB(int n, int m, float* a, float* b);
-void del(float* ans, float* ansb, int n);
+void Error(float* ans, float* ansb, int n);

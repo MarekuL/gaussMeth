@@ -18,8 +18,6 @@ int main()
 	Matrix1 = Create(3, 4, a);
 
 
-
-
 	Out(Matrix1, 3, 4);
 
 	try {
@@ -30,7 +28,6 @@ int main()
 		cout << error_mesage;
 		return 0;
 	}
-
 
 	Out(Matrix1, 3, 4);
 
@@ -51,7 +48,7 @@ int main()
 	OutAns(ans, 3);
 	OutAns(ansb, 3);
 
-	del(ans, ansb, 3);
+	Error(ans, ansb, 3);
 
 	return 0;
 }
